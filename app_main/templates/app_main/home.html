@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ full_name }}</h1>
+
+<a class="text-blue-600" href="{% url 'logout' %}">Logout</a>
+
+<h2>Costs:</h2>
+<ul>
+    {% for cost in costs_list %}
+        <li>{{ cost.name }} - {{ cost.amount }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
