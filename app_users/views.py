@@ -14,17 +14,11 @@ def user_registration(request):
 
     """
     View function to handle user registration.
-
-    On POST request:
+    
         - Extracts registration data from the request.
         - Checks if the provided passwords match and if the username is available.
         - If conditions are met, creates a new user and redirects to the login page.
     
-    Parameters:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponseRedirect: Redirects to the login page upon successful registration.
     """
 
     if request.method == 'POST':
@@ -64,17 +58,10 @@ def login_user(request):
     """
     View function to handle user login.
 
-    On POST request:
         - Extracts login credentials from the request.
         - Checks if the provided username exists and if the password is correct.
         - If the user exists and the password is correct, logs the user in and redirects to the home page.
 
-    Parameters:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponseRedirect: Redirects to the home page upon successful login.
-        HttpResponse: Renders the login page if the request method is not POST.
     """
     
     if request.method == 'POST':
@@ -101,12 +88,7 @@ def logout_user(request):
 
     Logs out the currently authenticated user and redirects to the login page.
 
-    Parameters:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponseRedirect: Redirects to the login page after logging out the user.
     """
-    
+
     logout(request)
-    return redirect('login')
+    return redirect('login') 

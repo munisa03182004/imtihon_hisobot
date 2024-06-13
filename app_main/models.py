@@ -41,11 +41,5 @@ class Cost(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        """
-        Return a string representation of the cost.
-
-        Returns:
-            str: The name of the cost.
-        """
         return self.name
 
